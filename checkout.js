@@ -24,7 +24,8 @@
       version: 'v2',
       onSubmit: function (callback) {
         var extraData = {
-          email: Checkout.getData ? Checkout.getData('order.contact.email') : undefined
+          email: Checkout.getData ? Checkout.getData('order.contact.email') : undefined,
+          callback_urls: Checkout.getData ? Checkout.getData('callbackUrls.success') : undefined
         };
 
         Checkout.processPayment(extraData)
