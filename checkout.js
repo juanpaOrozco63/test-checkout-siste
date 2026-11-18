@@ -27,7 +27,7 @@
           email: Checkout.getData ? Checkout.getData('order.contact.email') : undefined,
           callback_urls: Checkout.getData ? Checkout.getData('callbackUrls.success') : undefined
         };
-
+        console.warn(extraData)
         Checkout.processPayment(extraData)
           .then(function (payment) {
             if (payment && payment.redirect_url) {
